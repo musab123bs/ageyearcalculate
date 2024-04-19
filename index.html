@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>~ Age Calculator</title>
+    <style>
+.calculator h1 .year {
+    color: green;
+}
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <span>Year of Birth: <input type="text" placeholder="Year"></span>
+        <input type="button" id="submitBtn" value="Submit">
+        <h1></h1>
+    </div>
+
+    <script>
+        submitBtn = document.querySelector('#submitBtn');
+        submitBtn.addEventListener('click', function(){
+        dob = document.querySelector('.calculator > span input').value;
+        curDate = new Date;
+        CrYear = curDate.getFullYear();
+        Result = CrYear - dob;
+        document.querySelector('.calculator h1').innerHTML = `Your are <span class="year">${Result}</span> Year`;
+        })
+        
+
+    </script>
+</body>
+</html>
